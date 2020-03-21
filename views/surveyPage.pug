@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  h3 Survey page #{pageNum} of #{pageCount} for #{username}
+  span #{question}
+  br
+  form(action="/questions" id="form" method="POST")
+    each answer, index in answers
+      if previousAnswer === answer
+        input(type="radio" id="answer" + index name="questionAnswer" value=answer checked)
+      else
+        input(type="radio" id="answer" + index name="questionAnswer" value=answer)
+      label(for="answer" + index) #{answer}
+      if renderingPreference === 'vertical'
+        br
+  button(type="submit" form="form" name="prev" value="prev") Prev
+  button(type="submit" form="form" name="next" value="next") Next
+  br
+  a(href="/renderingPreference") Set your rendering preference
+
+  

@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  h1 Results
+  h2 Your matched room mates in order of highest match to lowest match:
+  ol 
+    each roommate in roommates
+      li #{roommate[0]} has a match count of #{roommate[1]}
+  a(href="/") Go back to home page

@@ -1,0 +1,37 @@
+[
+  {
+    "id": "20572039f90sduf",
+    "question": "What kind of icecream do you like?",
+    "possibleAnswers": [
+      "Vanilla",
+      "Chocolate",
+      "Rocky Road",
+      "Americone Dream"
+    ]
+  },
+  {
+    "id": "1581294706677swqm71",
+    "question": "Do you like cats?",
+    "possibleAnswers": [
+      "Yes",
+      "No"
+    ]
+  },
+  {
+    "id": "1581296532748ohnta2",
+    "question": "Do you like Dogs?",
+    "possibleAnswers": [
+      "Yes",
+      "No"
+    ]
+  },
+  {
+    "id": "1581296583940wpgf5a",
+    "question": "How early do you normally wake up?",
+    "possibleAnswers": [
+      "Early",
+      "Normal",
+      "Late"
+    ]
+  }
+]

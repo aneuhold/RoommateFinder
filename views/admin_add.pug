@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  form(action="/admin/logout" method="GET" id="logout")
+  span Welcome, #{username} ---
+  button(type="submit" form="logout" value="logout") Logout
+  
+  h2 Create a new Question:
+
+  form(action="/admin/add" method="POST" id="formAdd")
+    label(for="questionText") Question: 
+      input(type="text" size=50 name="questionText")
+  br
+  button(type="submit" form="formAdd" value="Add Question") Add Question
+  button(type="submit" form="formCancel" value="Cancel") Cancel

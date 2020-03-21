@@ -1,0 +1,32 @@
+extends layout
+
+block content
+  form(action="/admin/logout" method="GET" id="logout")
+  span Welcome, #{username} ---
+  button(type="submit" form="logout" value="logout") Logout
+  
+  h2 Question Editor
+
+  form(action="/admin/edit?id=" + question.id method="POST" id="formQuestionText")
+    label(for="questionText") Question: 
+      input(type="text" name="questionText" size=50 value=question.question)
+  form(action="/admin" id="formCancel" method="GET")
+  button(type="submit" form="formQuestionText" name="updateQuestionText" value="Submit Changes") Submit Changes
+  button(type="submit" form="formCancel" value="Cancel") Cancel
+  br
+  br
+  span Possible Answers to the Question:
+  hr
+  each answer, index in question.possibleAnswers
+    form(action="/admin/edit?id=" + question.id + "&answerIndex=" + index method="POST")
+      label(for="answer" + index + "Text")
+        input(type="text" name="answerText" size=50 value=answer)
+      br
+      input(type="submit" name="editText" value="Submit Changes to Answer")
+      input(type="submit" name="delete" value="Delete Answer")
+    hr
+  form(action="/admin/edit?id=" + question.id method="POST")
+    input(type="submit" name="addAnswer" value="Add New Answer")
+
+  
+    

@@ -1,0 +1,33 @@
+extends layout
+
+block content
+  form(action="/admin/logout" method="GET" id="logout")
+  span Welcome, #{username} ---
+  button(type="submit" form="logout" value="logout") Logout
+  
+  h1 Admin Question Editor
+
+  form(action="/admin/add" method="GET")
+    input(type="submit" value="Add Question")
+  hr
+  each question, index in questions
+    h4 Question: #{question.question}
+    
+    span Possible Answers:
+    ol
+      each answer in question.possibleAnswers
+        li= answer
+    form(action="/admin/delete" method="GET" id="delete" + index)
+
+      // NOT USED for conversational state, only used to identify where the user
+        clicked
+      input(type="hidden" name="id" value=question.id)
+    form(action="/admin/edit" method="GET" id="edit" + index)
+      input(type="hidden" name="id" value=question.id)
+    button(type="submit" form="edit" + index value="edit") Edit
+    button(type="submit" form="delete" + index value="Delete") Delete
+
+    hr
+
+  
+    

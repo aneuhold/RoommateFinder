@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  h3 Choose your rendering preference for the questions:
+  br
+  form(action="/questions" method="POST")
+    if previousPreference === "horizontal"
+      input(type="radio" id="horizontal" name="renderingPreference" value="horizontal" checked)
+      label(for="horizontal") Horizontal
+      br
+      input(type="radio" id="vertical" name="renderingPreference" value="vertical")
+    else if previousPreference === "vertical"
+      input(type="radio" id="horizontal" name="renderingPreference" value="horizontal" )
+      label(for="horizontal") Horizontal
+      br
+      input(type="radio" id="vertical" name="renderingPreference" value="vertical" checked)
+    else 
+      input(type="radio" id="horizontal" name="renderingPreference" value="horizontal" )
+      label(for="horizontal") Horizontal
+      br
+      input(type="radio" id="vertical" name="renderingPreference" value="vertical")
+    label(for="vertical") Vertical
+    br
+    input(type="submit" value="OK")

@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1= title
+  
+  form(action="/questions" method="POST")
+    label(for="username") Username: 
+      input(type="text" name="username" required)
+    br
+    input(type="submit" value="match")
+
+  br
+  br
+  br
+  form(action="/admin/login" method="GET")
+    input(type="submit" value="Admin Login Page")
+
